@@ -2,11 +2,13 @@ import telebot
 import config
 import random
 import requests
+import os
 
 from telebot import types
 
 bot = telebot.TeleBot(config.TOKEN)
 
+PORT = int(os.environ.get('PORT', 5000))
 
 
 @bot.message_handler(commands=['start'])
@@ -94,4 +96,4 @@ def callback_inline(call):
 
 
 #RUN
-bot.polling(none_stop=True)
+# bot.polling(none_stop=True)
